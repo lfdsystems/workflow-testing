@@ -13,8 +13,10 @@ jobs:
       - name: Checkout Repository
         id: checkout-repository
         uses: actions/checkout@main
+
       - name: Analyze the Issue
         id: analyze-the-issue
+        if: steps.checkout-repository.outcome == 'success'
         uses: ./.github/actions/issue-opened
         with:
           github_token: ${{ secrets.REPO_PAT }}

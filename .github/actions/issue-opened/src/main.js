@@ -18,13 +18,21 @@ async function run() {
 
     const octokit = new github.getOctokit(token)
 
-    const labels = await octokit.rest.issues.listLabelsOnIssue({
+    const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
       owner,
       repo,
       issue_number
     })
 
-    console.log(labels)
+    let labels_list
+
+    if (labels.length === 0) {
+      labels_list = 'empty'
+    } else {
+      labels_list = 'not empty'
+    }
+
+    console.log(labels_list)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
