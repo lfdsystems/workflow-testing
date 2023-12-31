@@ -7,7 +7,9 @@ const github = require('@actions/github')
  */
 async function run() {
   try {
-    
+    const token = core.getInput('github_token', { required: true })
+
+    const octokit = new github.getOctokit(token)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)

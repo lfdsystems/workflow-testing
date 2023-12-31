@@ -1,18 +1,12 @@
-name: Hello, World!
-description: Greet someone and record the time
-author: GitHub Actions
-
+name: Issue Opened Action
+description: This action will run when an Issue is Opened.
+author: LFD Systems
 # Define your inputs here.
 inputs:
-  who-to-greet:
-    description: Who to greet
+  github_token:
+    description: The GitHub repository token.
+    default: GITHUB_TOKEN
     required: true
-    default: World
-
-# Define your outputs here.
-outputs:
-  time:
-    description: The time we greeted you
 
 runs:
   using: node20
