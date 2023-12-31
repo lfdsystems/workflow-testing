@@ -28489,17 +28489,20 @@ async function run() {
     const owner = payload.repository.owner.login
     const repo = payload.repository.name
     const issue_number = payload.issue.number
-    const label_name = payload.label.name
+    let label_name = payload.label.name
+
+    label_name = label_name.replace(':', '%3A')
+    label_name = label_name.replace(' ', '%20')
 
     const token = core.getInput('github_token', { required: true })
 
     const octokit = new github.getOctokit(token)
 
     const body = `
-${sender},
+**${sender}**,
 
 _As per the policy of the Repository, manual application of the Labels is not permitted._
-_Therefore the applied label ${payload.repository.html_url}/labels/${payload.label.name} is removed._
+_Therefore the applied label ${payload.repository.html_url}/labels/${label_name} is removed._
 `
 
     if (sender !== 'bot-lfdsystems') {
