@@ -28483,9 +28483,15 @@ const github = __nccwpck_require__(5438)
  */
 async function run() {
   try {
+    const payload = github.context.payload
+
+    const sender = payload.sender.login
+
     const token = core.getInput('github_token', { required: true })
 
     const octokit = new github.getOctokit(token)
+
+    console.log(sender)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
