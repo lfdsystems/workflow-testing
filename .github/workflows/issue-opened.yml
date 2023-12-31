@@ -1,0 +1,20 @@
+name: Issue Opened
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  issue-opened:
+    name: Issue Opened
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        id: checkout-repository
+        uses: actions/checkout@main
+      - name: Analyze the Issue
+        id: analyze-the-issue
+        uses: ./.github/actions/issue-opened
+        with:
+          github_token: ${{ secrets.REPO_PAT }}
