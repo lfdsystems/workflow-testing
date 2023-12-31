@@ -1,0 +1,13 @@
+name: Issue Labeled Action
+description: This action will run when an Issue is Labeled.
+author: LFD Systems
+
+inputs:
+  github_token:
+    description: The GitHub repository token.
+    default: GITHUB_TOKEN
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js

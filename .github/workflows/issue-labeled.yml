@@ -1,0 +1,22 @@
+name: Issue Labeled
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  issue-labeled:
+    name: Issue Labeled
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        id: checkout-repository
+        uses: actions/checkout@main
+
+      - name: Analyze the Issue
+        id: analyze-the-issue
+        if: steps.checkout-repository.outcome == 'success'
+        uses: ./.github/actions/issue-labeled
+        with:
+          github_token: ${{ secrets.REPO_PAT }}
