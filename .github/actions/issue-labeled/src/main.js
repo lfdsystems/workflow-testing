@@ -28,7 +28,7 @@ async function run() {
 **${sender}**,
 
 _As per the policy of the Repository, manual application of label is **NOT** permitted._
-_Therefore the applied label ${payload.repository.html_url}/labels/${label_name} is removed._
+_Therefore the applied label ${payload.repository.html_url}/labels/${url_label_name} is removed._
 `
 
     if (sender !== 'bot-lfdsystems') {
