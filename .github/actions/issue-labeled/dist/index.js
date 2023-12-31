@@ -28489,10 +28489,12 @@ async function run() {
     const owner = payload.repository.owner.login
     const repo = payload.repository.name
     const issue_number = payload.issue.number
-    let label_name = payload.label.name
+    const label_name = payload.label.name
 
-    label_name = label_name.replace(':', '%3A')
-    label_name = label_name.replace(' ', '%20')
+    let url_label_name = label_name
+
+    url_label_name = url_label_name.replace(':', '%3A')
+    url_label_name = url_label_name.replace(' ', '%20')
 
     const token = core.getInput('github_token', { required: true })
 
@@ -28501,16 +28503,22 @@ async function run() {
     const body = `
 **${sender}**,
 
-_As per the policy of the Repository, manual application of the Labels is not permitted._
+_As per the policy of the Repository, manual application of label is **NOT** permitted._
 _Therefore the applied label ${payload.repository.html_url}/labels/${label_name} is removed._
 `
 
     if (sender !== 'bot-lfdsystems') {
-      const { data: issue } = await octokit.rest.issues.createComment({
+      const { data: comment } = await octokit.rest.issues.createComment({
         owner,
         repo,
         issue_number,
         body
+      })
+      const { data: unlabel } = await octokit.rest.issues.removeLabel({
+        owner,
+        repo,
+        issue_number,
+        name: label_name
       })
     }
   } catch (error) {
