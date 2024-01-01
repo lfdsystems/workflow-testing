@@ -13,6 +13,8 @@ async function run() {
     const owner = payload.repository.owner.login
     const repo = payload.repository.name
     const issue_number = payload.issue.number
+    const title = payload.issue.title
+    const body = payload.issue.body
 
     const token = core.getInput('github_token', { required: true })
 
@@ -23,14 +25,15 @@ async function run() {
     let state
     let status
     let category
+    let action
 
     if (labels.length === 0) {
-      recreated = 'first'
+      recreated = false
     } else {
       await new Promise(resolve => setTimeout(resolve, 30000))
       labels = await getLabelsList(owner, repo, issue_number, token)
       if (labels.length === 0) {
-        recreated = 'second'
+        recreated = false
       } else {
         labels = labels.map(obj => obj['name'])
         for (const substr of labels) {
@@ -53,15 +56,21 @@ async function run() {
             status === 'RECREATED' &&
             (category === 'DEL-ISSUE' || category === 'TRF-ISSUE')
           ) {
-            recreated = 'third'
+            recreated = true
           } else {
-            recreated = 'fourth'
+            recreated = false
           }
         }
       }
     }
 
-    console.log(recreated)
+    if (/^\[(BUG|EPC|TSK|FET|USS|REP|DOC|MSC)]:\s.*/.test(title)) {
+      action = 'accepted'
+    } else {
+      action = 'rejected'
+    }
+
+    console.log(action)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
