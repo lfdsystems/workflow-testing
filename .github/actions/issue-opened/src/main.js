@@ -25,12 +25,12 @@ async function run() {
     let category
 
     if (labels.length === 0) {
-      recreated = false
+      recreated = 'first'
     } else {
       await new Promise(resolve => setTimeout(resolve, 30000))
       labels = await getLabelsList(owner, repo, issue_number, token)
       if (labels.length === 0) {
-        recreated = false
+        recreated = 'second'
       } else {
         labels = labels.map(obj => obj['name'])
         for (const substr of labels) {
@@ -53,9 +53,9 @@ async function run() {
             status === 'RECREATED' &&
             (category === 'DEL-ISSUE' || category === 'TRF-ISSUE')
           ) {
-            recreated = true
+            recreated = 'third'
           } else {
-            recreated = false
+            recreated = 'fourth'
           }
         }
       }
