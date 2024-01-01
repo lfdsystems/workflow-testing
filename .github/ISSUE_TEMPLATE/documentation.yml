@@ -1,6 +1,6 @@
 name: DOCUMENTATION
 description: SUBMIT A DOCUMENTATION REQUEST!!!!!
-title: "📄 [DOC]: "
+title: "[DOC]: "
 body:
   - type: markdown
     attributes:

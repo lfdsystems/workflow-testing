@@ -1,6 +1,6 @@
 name: USERSTORY
 description: SUBMIT A USERSTORY REQUEST!!!!!
-title: "📇 [USS]: "
+title: "[USS]: "
 body:
   - type: markdown
     attributes:

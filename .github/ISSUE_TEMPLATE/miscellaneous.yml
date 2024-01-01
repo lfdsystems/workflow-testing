@@ -1,6 +1,6 @@
 name: MISCELLANEOUS
 description: SUBMIT A REQUEST WHICH CANNOT BE CATEGORISED IN ANY OF OTHER ISSUE TYPES!!!!!
-title: "🤔 [MSC]: "
+title: "[MSC]: "
 body:
   - type: markdown
     attributes:

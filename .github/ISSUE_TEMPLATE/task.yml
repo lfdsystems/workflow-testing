@@ -1,6 +1,6 @@
 name: TASK
 description: SUBMIT A TASK REQUEST!!!!!
-title: "📝 [TSK]: "
+title: "[TSK]: "
 body:
   - type: markdown
     attributes:

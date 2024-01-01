@@ -1,6 +1,6 @@
 name: EPIC
 description: SUBMIT AN EPIC REQUEST!!!!!
-title: "🏔️ [EPC]: "
+title: "️[EPC]: "
 body:
   - type: markdown
     attributes:

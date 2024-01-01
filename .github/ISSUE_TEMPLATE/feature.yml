@@ -1,6 +1,6 @@
 name: FEATURE
 description: SUBMIT A FEATURE REQUEST!!!!!
-title: "✨ [FET]: "
+title: "[FET]: "
 body:
   - type: markdown
     attributes:

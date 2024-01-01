@@ -1,6 +1,6 @@
 name: REPOSITORY
 description: SUBMIT A REPOSITORY UPDATE REQUEST!!!!!
-title: "🗃️ [REP]: "
+title: "️[REP]: "
 body:
   - type: markdown
     attributes:

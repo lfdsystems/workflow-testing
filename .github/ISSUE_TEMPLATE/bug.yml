@@ -1,6 +1,6 @@
 name: BUG
 description: SUBMIT A BUG REPORT!!!!!
-title: "🐞 [BUG]: "
+title: "[BUG]: "
 body:
   - type: markdown
     attributes:
