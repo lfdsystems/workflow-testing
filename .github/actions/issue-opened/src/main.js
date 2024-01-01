@@ -20,12 +20,17 @@ async function run() {
 
     let recreated
 
+    console.log(recreated)
+    console.log(labels)
+
     if (labels.length === 0) {
       recreated = false
     } else {
       setTimeout(async () => {
         labels = await getLabelsList(owner, repo, issue_number, token)
       }, 30000)
+      console.log(recreated)
+      console.log(labels)
       if (labels.length === 0) {
         recreated = false
       } else {
@@ -34,6 +39,7 @@ async function run() {
     }
 
     console.log(recreated)
+    console.log(labels)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
