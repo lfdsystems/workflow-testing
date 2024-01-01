@@ -19,13 +19,16 @@ async function run() {
     let labels = await getLabelsList(owner, repo, issue_number, token)
 
     let recreated
+    console.log(labels)
 
     if (labels.length === 0) {
       recreated = false
     } else {
+      console.log('Before Timeout')
       setTimeout(async () => {
         labels = await getLabelsList(owner, repo, issue_number, token)
       }, 30000)
+      console.log('After Timeout')
       if (labels.length === 0) {
         recreated = false
       } else {
