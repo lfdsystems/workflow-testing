@@ -47,13 +47,21 @@ async function run() {
             const parts = substr.split(':')
             category = parts[1].trim
           }
+          if (
+            sender === 'bot-lfdsystems' &&
+            state === 'TRIAGE' &&
+            status === 'RECREATED' &&
+            (category === 'DEL-ISSUE' || category === 'TRF-ISSUE')
+          ) {
+            recreated = true
+          } else {
+            recreated = false
+          }
         }
       }
     }
 
-    console.log(
-      `TYPE:${type}\nSTATE:${state}\nSTATUS:${status}\nCATEGORY:${category}`
-    )
+    console.log(recreated)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
