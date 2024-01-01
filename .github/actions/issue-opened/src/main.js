@@ -19,7 +19,10 @@ async function run() {
     let labels = await getLabelsList(owner, repo, issue_number, token)
 
     let recreated
-    console.log(labels)
+    let type
+    let state
+    let status
+    let category
 
     if (labels.length === 0) {
       recreated = false
@@ -30,9 +33,27 @@ async function run() {
         recreated = false
       } else {
         labels = labels.map(obj => obj['name'])
+        for (const substr of labels) {
+          if (substr.includes('type')) {
+            const parts = substr.split(':')
+            type = parts[1].trim()
+          } else if (substr.includes('state')) {
+            const parts = substr.split(':')
+            state = parts[1].trim()
+          } else if (substr.includes('status')) {
+            const parts = substr.split(':')
+            status = parts[1].trim()
+          } else if (substr.includes('category')) {
+            const parts = substr.split(':')
+            category = parts[1].trim
+          }
+        }
       }
     }
-    console.log(labels)
+
+    console.log(
+      `TYPE:${type}\nSTATE:${state}\nSTATUS:${status}\nCATEGORY:${category}`
+    )
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
