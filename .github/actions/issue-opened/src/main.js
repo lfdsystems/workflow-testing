@@ -23,10 +23,9 @@ async function run() {
     if (labels.length === 0) {
       recreated = false
     } else {
-      setTimeout(
-        (labels = await getLabelsList(owner, repo, issue_number, token)),
-        30000
-      )
+      setTimeout(async () => {
+        labels = await getLabelsList(owner, repo, issue_number, token)
+      }, 30000)
       if (labels.length === 0) {
         recreated = false
       } else {
