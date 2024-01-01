@@ -26,6 +26,8 @@ async function run() {
     let status
     let category
     let action
+    let reason
+    let type_label
 
     if (labels.length === 0) {
       recreated = false
@@ -65,12 +67,29 @@ async function run() {
     }
 
     if (/^\[(BUG|EPC|TSK|FET|USS|REP|DOC|MSC)]:\s.*/.test(title)) {
-      action = 'accepted'
+      if (/^\[BUG]:\s.*/.test(title)) {
+        type_label = 'type: BUG'
+      } else if (/^\[EPC]:\s.*/.test(title)) {
+        type_label = 'type: EPIC'
+      } else if (/^\[TSK]:\s.*/.test(title)) {
+        type_label = 'type: TASK'
+      } else if (/^\[FET]:\s.*/.test(title)) {
+        type_label = 'type: FEATURE'
+      } else if (/^\[USS]:\s.*/.test(title)) {
+        type_label = 'type: USERSTORY'
+      } else if (/^\[REP]:\s.*/.test(title)) {
+        type_label = 'type: REPOSITORY'
+      } else if (/^\[DOC]:\s.*/.test(title)) {
+        type_label = 'type: DOCUMENTATION'
+      } else {
+        type_label = 'type: MISCELLANEOUS'
+      }
     } else {
       action = 'rejected'
+      reason = 'title'
     }
 
-    console.log(action)
+    console.log(type_label)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
