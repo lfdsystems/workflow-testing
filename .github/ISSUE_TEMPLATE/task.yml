@@ -1,0 +1,83 @@
+name: TASK
+description: SUBMIT A TASK REQUEST!!!!!
+title: "📝 [TSK]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS TASK REQUEST FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: userstory
+    attributes:
+      label: |
+        RELATED USERSTORY
+      description: |
+        ###### KINDLY PROVIDE THE USERSTORY ISSUE NO. TO WHICH THIS TASK IS RELATED!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED USERSTORY ISSUE NO.]
+        ```
+      placeholder: |
+        RELATED USERSTORY ISSUE NO. IN ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: usstsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE A DETAILED INFORMATION OF WHAT NEEDS TO BE ACHIEVED IN THIS TASK!!!!!
+      placeholder: |
+        DESCRIBE THE TASK IN DETAIL.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---

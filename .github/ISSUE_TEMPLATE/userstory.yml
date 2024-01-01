@@ -1,0 +1,135 @@
+name: USERSTORY
+description: SUBMIT A USERSTORY REQUEST!!!!!
+title: "📇 [USS]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS USERSTORY REQUEST FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: feature
+    attributes:
+      label: |
+        RELATED FEATURE
+      description: |
+        ###### KINDLY PROVIDE THE FEATURE ISSUE NO. TO WHICH THIS USERSTORY IS RELATED!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED FEATURE ISSUE NO.]
+        ```
+      placeholder: |
+        RELATED FEATURE ISSUE NO. IN ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: featsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE THE DETAILED INFORMATION OF THE USERSTORY!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        ***USER STORY SUMMARY:***
+        **As a** *[USER CONCERNED BY THE STORY]*, **I want** *[GOAL OF THE STORY]*, **so that** *[REASON FOR THE STORY]*.
+      
+        ***USER STORY DESCRIPTION:***
+        [A DETAILED DESCRIPTION OF THE USER STORY]
+      
+        ***ACCEPTANCE CRITERIA:***
+        - [ ] **Given** *[SOME CONTEXT]*, **when** *[THIS ACTION IS CARRIED OUT]*, **then** *[THIS RESULT HAPPENS]*
+        - [ ] **Given** *[SOME CONTEXT]*, **when** *[THIS ACTION IS CARRIED OUT]*, **then** *[THIS RESULT HAPPENS]*
+        - [ ] **Given** *[SOME CONTEXT]*, **when** *[THIS ACTION IS CARRIED OUT]*, **then** *[THIS RESULT HAPPENS]*
+        ```
+      placeholder: |
+        DESCRIBE THE USERSTORY IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: tasks
+    attributes:
+      label: |
+        RELATED TASKS
+      description: |
+        ###### KINDLY PROVIDE THE LIST OF ALL THE RELATED TASKS FOR THIS USERSTORY!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED TASK ISSUE NO.]
+        - [ ] #[RELATED TASK ISSUE NO.]
+        - [ ] #[RELATED TASK ISSUE NO.]
+        ```
+      placeholder: |
+        LIST OF RELATED TASKS IN ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: rtsksep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---

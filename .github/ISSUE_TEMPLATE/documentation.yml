@@ -1,0 +1,119 @@
+name: DOCUMENTATION
+description: SUBMIT A DOCUMENTATION REQUEST!!!!!
+title: "📄 [DOC]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS DOCUMENTATION REQUEST FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE THE INFORMATION THAT IS TO BE DOCUMENTED!!!!!
+      placeholder: |
+        DESCRIBE THE INFORMATION TO BE DOCUMENTED.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: filename
+    attributes:
+      label: |
+        FILE NAME
+      description: |
+        ###### KINDLY PROVIDE THE NAME OF THE FILE WITH EXTENSION THAT IS TO BE CREATED, MODIFIED OR DELETED!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        README.md
+        ```
+      placeholder: |
+        NAME OF THE FILE WITH EXTENSION.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: flnmsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: filepath
+    attributes:
+      label: |
+        FILE PATH
+      description: |
+        ###### KINDLY PROVIDE THE FULL PATH AS PER THE GITHUB REPOSITORY HIERARCHY OF THE ABOVE FILE!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        [REPOSITORY-NAME]/.github/workflows/
+        ```
+      placeholder: |
+        FULL PATH OF THE FILE IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: flpasep 
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---

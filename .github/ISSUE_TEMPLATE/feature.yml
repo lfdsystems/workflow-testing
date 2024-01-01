@@ -1,0 +1,130 @@
+name: FEATURE
+description: SUBMIT A FEATURE REQUEST!!!!!
+title: "✨ [FET]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS FEATURE REQUEST FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: epic
+    attributes:
+      label: |
+        RELATED EPIC
+      description: |
+        ###### KINDLY PROVIDE THE EPIC ISSUE NO. TO WHICH THIS FEATURE IS REALTED!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED EPIC ISSUE NO.]
+        ```
+      placeholder: |
+        RELATED EPIC ISSUE NO. IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: epicsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE A DETAILED DESCRIPTION OF THE FEATURE!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        ***BENEFIT HYPOTHESIS:***
+        [PROPOSED MEASURABLE BENEFIT TO THE END-USER]
+
+        ***ACCEPTANCE CRITERIA:***
+        [MENTION THE CRITERIAS THAT WOULD MAKE THIS FEATURE ACCEPTABLE]
+        ```
+      placeholder: |
+        DESCRIBE THE FEATURE IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: userstories
+    attributes:
+      label: |
+        RELATED USERSTORIES
+      description: |
+        ###### KINDLY PROVIDE THE LIST OF ALL THE RELATED USERSTORIES FOR THIS FEATURE!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED USERSTORY ISSUE NO.]
+        - [ ] #[RELATED USERSTORY ISSUE NO.]
+        - [ ] #[RELATED USERSTORY ISSUE NO.]
+        ```
+      placeholder: |
+        LIST OF ALL THE RELATED USERSTORIES OF THIS FEATURE IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: russsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---

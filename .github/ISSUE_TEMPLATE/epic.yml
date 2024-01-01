@@ -1,0 +1,97 @@
+name: EPIC
+description: SUBMIT AN EPIC REQUEST!!!!!
+title: "🏔️ [EPC]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS EPIC REQUEST FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE A DETAILED DESCRIPTION REGARDING THE EPIC REQUEST!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)*** 
+        ```
+        ***BACKGROUND:***
+        [SUMMARISE THE PROBLEM OR FUNCTIONALITY]
+
+        ***PROBLEM STATEMENT:***
+        [GOALS OF THE EPIC OR PROBLEMS BEING SOLVED]
+
+        ***REQUIREMENTS:***
+        [DELIVERABLE COMPONENTS OF THE EPIC]***
+        ```
+      placeholder: |
+        DESCRIBE THE EPIC IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: features
+    attributes:
+      label: |
+        RELATED FEATURES
+      description: |
+        ###### KINDLY PROVIDE THE LIST OF ALL THE RELATED FEATURES FOR THIS EPIC!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        - [ ] #[RELATED FEATURE ISSUE NO.]
+        - [ ] #[RELATED FEATURE ISSUE NO.]
+        - [ ] #[RELATED FEATURE ISSUE NO.]
+        ```
+      placeholder: |
+        LIST OF ALL THE RELATED FEATURES OF THIS EPIC IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: rfetsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---

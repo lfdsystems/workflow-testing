@@ -1,0 +1,208 @@
+name: BUG
+description: SUBMIT A BUG REPORT!!!!!
+title: "🐞 [BUG]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: markdown
+    attributes:
+      value: |
+        ###### THANK YOU FOR TAKING THE TIME TO FILL OUT THIS BUG REPORT FORM!!!!!
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: description
+    attributes:
+      label: |
+        DESCRIPTION
+      description: |
+        ###### KINDLY PROVIDE A DETAILED INFORMATION OF THE BUG AND THE REASON WHY YOU CONSIDER IT TO BE A BUG!!!!!
+      placeholder: |
+        DESCRIBE THE BUG AND THE REASON.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: descsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: ---
+  - type: textarea
+    id: expbeh
+    attributes:
+      label: |
+        EXPECTED BEHAVIOUR
+      description: |
+        ###### KINDLY PROVIDE THE DETAILS OF WHAT SHOULD HAPPEN!!!!!
+      placeholder: |
+        DESCRIBE THE EXPECTED BEHAVIOUR.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: exbhsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: actbeh
+    attributes:
+      label: |
+        ACTUAL BEHAVIOUR
+      description: |
+        ###### KINDLY PROVIDE THE DETAILS OF WHAT HAPPENS INSTEAD!!!!!
+      placeholder: |
+        DESCRIBE THE ACTUAL BEHAVIOUR.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: acbhsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: steps
+    attributes:
+      label: |
+        STEPS TO REPRODUCE
+      description: |
+        ###### KINDLY PROVIDE THE SET OF STEPS TO REPRODUCE THE BUG!!!!!
+
+        ***(TO BE PROVIDED IN THE BELOW FORMAT ONLY)***
+        ```
+        1. STEP 1
+        2. STEP 2
+        3. STEP 3
+        ```
+      placeholder: |
+        DESCRIBE THE STEPS IN THE ABOVE FORMAT.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: stepsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: |
+        BUG SCREENSHOT
+      description: |
+        ###### KINDLY PROVIDE THE SCREENSHOT OF THE BUG!!!!!
+      placeholder: |
+        UPLOAD THE SCREENSHOT IMAGE.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: scshsep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: textarea
+    id: log
+    attributes:
+      label: |
+        BUG CODE OR LOGS
+      description: |
+        ###### KINDLY PROVIDE THE CODE TO REPRODUCE OR THE LOG OUTPUT!!!!!
+      placeholder: |
+        CODE OR LOG GENERATED.
+      render: VBA
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+  - type: input
+    id: logssep
+    attributes:
+      label: |
+        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
+      description: |
+        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
+        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
+      value: |
+        ---
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
