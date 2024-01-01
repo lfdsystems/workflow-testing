@@ -24,11 +24,8 @@ async function run() {
     if (labels.length === 0) {
       recreated = false
     } else {
-      console.log('Before Timeout')
-      setTimeout(async () => {
-        labels = await getLabelsList(owner, repo, issue_number, token)
-      }, 30000)
-      console.log('After Timeout')
+      await new Promise(resolve => setTimeout(resolve, 30000))
+      labels = await getLabelsList(owner, repo, issue_number, token)
       if (labels.length === 0) {
         recreated = false
       } else {
