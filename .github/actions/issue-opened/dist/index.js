@@ -28492,7 +28492,7 @@ async function run() {
 
     const token = core.getInput('github_token', { required: true })
 
-    let labels = getLabelsList(owner, repo, issue_number, token)
+    let labels = await getLabelsList(owner, repo, issue_number, token)
 
     let recreated
 
@@ -28500,7 +28500,7 @@ async function run() {
       recreated = false
     } else {
       setTimeout(
-        (labels = getLabelsList(owner, repo, issue_number, token)),
+        (labels = await getLabelsList(owner, repo, issue_number, token)),
         30000
       )
       if (labels.length === 0) {
@@ -28518,15 +28518,20 @@ async function run() {
 }
 
 async function getLabelsList(owner, repo, issue_number, token) {
-  const octokit = new github.getOctokit(token)
+  try {
+    const octokit = new github.getOctokit(token)
 
-  const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
-    owner,
-    repo,
-    issue_number
-  })
+    const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
+      owner,
+      repo,
+      issue_number
+    })
 
-  return labels
+    return labels
+  } catch (error) {
+    // Fail the workflow step if an error occurs
+    core.setFailed(error.message)
+  }
 }
 
 module.exports = {
