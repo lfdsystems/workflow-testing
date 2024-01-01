@@ -28492,22 +28492,22 @@ async function run() {
 
     const token = core.getInput('github_token', { required: true })
 
-    const octokit = new github.getOctokit(token)
-
-    const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
-      owner,
-      repo,
-      issue_number
-    })
-
-    console.log(labels)
+    let labels = getLabelsList(owner, repo, issue_number, token)
 
     let recreated
 
     if (labels.length === 0) {
       recreated = false
     } else {
-      recreated = true
+      setTimeout(
+        (labels = getLabelsList(owner, repo, issue_number, token)),
+        30000
+      )
+      if (labels.length === 0) {
+        recreated = false
+      } else {
+        recreated = true
+      }
     }
 
     console.log(recreated)
@@ -28517,15 +28517,17 @@ async function run() {
   }
 }
 
-// async function getLabels(owner, repo, issue_number) {
-//   const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
-//     owner,
-//     repo,
-//     issue_number
-//   })
+async function getLabelsList(owner, repo, issue_number, token) {
+  const octokit = new github.getOctokit(token)
 
-//   console.log(labels)
-// }
+  const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
+    owner,
+    repo,
+    issue_number
+  })
+
+  return labels
+}
 
 module.exports = {
   run
