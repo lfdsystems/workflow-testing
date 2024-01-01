@@ -24,20 +24,32 @@ async function run() {
       issue_number
     })
 
-    let labels_list
+    console.log(labels)
+
+    let recreated
 
     if (labels.length === 0) {
-      labels_list = 'empty'
+      recreated = false
     } else {
-      labels_list = 'not empty'
+      recreated = true
     }
 
-    console.log(labels_list)
+    console.log(recreated)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
   }
 }
+
+// async function getLabels(owner, repo, issue_number) {
+//   const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
+//     owner,
+//     repo,
+//     issue_number
+//   })
+
+//   console.log(labels)
+// }
 
 module.exports = {
   run
