@@ -28542,7 +28542,11 @@ async function run() {
       }
     }
 
-    if (/^\[(BUG|EPC|TSK|FET|USS|REP|DOC|MSC)]:\s.*/.test(title)) {
+    if (
+      /^\[(BUG|EPC|TSK|FET|USS|REP|DOC|MSC)]:\s[A-Z](?!.*\s{2})\S(?:.*\S){3,}/.test(
+        title
+      )
+    ) {
       if (/^\[BUG]:\s.*/.test(title)) {
         type_label = 'type: BUG'
       } else if (/^\[EPC]:\s.*/.test(title)) {
@@ -28566,6 +28570,7 @@ async function run() {
     }
 
     console.log(type_label)
+    console.log(payload)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
