@@ -28567,6 +28567,8 @@ async function run() {
       if (type_label === 'type: BUG') {
         if (/^'### DESCRIPTION\\n'\s\+\n('\\n'\s\+\n){2}.*/.test(body)) {
           console.log('Body Matched')
+        } else {
+          console.log('Body Not Matched')
         }
       }
     } else {
