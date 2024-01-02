@@ -88,13 +88,15 @@ async function run() {
       } else {
         type_label = 'type: MISCELLANEOUS'
       }
+      if (type_label === 'type: BUG') {
+        if (/^'### DESCRIPTION\\n'\s\+\n('\\n'\s\+\n){2}.*/.test(body)) {
+          console.log('Body Matched')
+        }
+      }
     } else {
       action = 'rejected'
       reason = 'title'
     }
-
-    console.log(type_label)
-    console.log(payload)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
