@@ -28575,6 +28575,7 @@ async function run() {
       action = 'rejected'
       reason = 'title'
     }
+    console.log(body)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
