@@ -14,7 +14,7 @@ async function run() {
     const repo = payload.repository.name
     const issue_number = payload.issue.number
     const title = payload.issue.title
-    const body = payload.issue.body
+    let body = payload.issue.body
 
     const token = core.getInput('github_token', { required: true })
 
@@ -65,7 +65,7 @@ async function run() {
         }
       }
     }
-
+    console.log(`OLD BODY:\n${body}`)
     if (
       /^\[(BUG|EPC|TSK|FET|USS|REP|DOC|MSC)]:\s[A-Z](?!.*\s{2})\S(?:.*\S){3,}/.test(
         title
@@ -73,15 +73,11 @@ async function run() {
     ) {
       if (/^\[BUG]:\s.*/.test(title)) {
         if (
-          /### DESCRIPTION\n{3}.*?\n{2}---\n{2}### EXPECTED BEHAVIOUR\n{3}.*?\n{2}---\n{2}### ACTUAL BEHAVIOUR\n{3}.*?\n{2}---\n{2}### STEPS TO REPRODUCE\n{3}.*?\n{2}---\n{2}### BUG SCREENSHOT\n{3}.*?\n{2}---\n{2}### BUG CODE OR LOGS\n{3}```VBA\n.*?```.*?\n{2}---$/s.test(
+          /### DESCRIPTION\n{3}.*?\n{2}### EXPECTED BEHAVIOUR\n{3}.*?\n{2}### ACTUAL BEHAVIOUR\n{3}.*?\n{2}### STEPS TO REPRODUCE\n{3}.*?\n{2}### BUG SCREENSHOT\n{3}.*?\n{2}### BUG CODE OR LOGS\n{3}```VBA\n.*?```$/s.test(
             body
           )
         ) {
           type_label = 'type: BUG'
-          action = 'accepted'
-        } else {
-          action = 'rejected'
-          reason = 'body'
         }
       } else if (/^\[EPC]:\s.*/.test(title)) {
         type_label = 'type: EPIC'
@@ -98,12 +94,19 @@ async function run() {
       } else {
         type_label = 'type: MISCELLANEOUS'
       }
+      if (type_label !== undefined) {
+        action = 'accepted'
+        body = body.replace(/###/g, '\n---\n\n###')
+        body = body.replace('\n---\n\n', '')
+        body += '\n---'
+      }
     } else {
       action = 'rejected'
       reason = 'title'
     }
     console.log(action)
     console.log(reason)
+    console.log(`NEW BODY:\n${body}`)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
