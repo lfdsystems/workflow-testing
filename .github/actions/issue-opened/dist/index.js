@@ -28548,7 +28548,17 @@ async function run() {
       )
     ) {
       if (/^\[BUG]:\s.*/.test(title)) {
-        type_label = 'type: BUG'
+        if (
+          /### DESCRIPTION\n{3}.*?\n{2}---\n{2}### EXPECTED BEHAVIOUR\n{3}.*?\n{2}---\n{2}### ACTUAL BEHAVIOUR\n{3}.*?\n{2}---\n{2}### STEPS TO REPRODUCE\n{3}.*?\n{2}---\n{2}### BUG SCREENSHOT\n{3}.*?\n{2}---\n{2}### BUG CODE OR LOGS\n{3}```VBA\n.*?```.*?\n{2}---$/s.test(
+            body
+          )
+        ) {
+          type_label = 'type: BUG'
+          action = 'accepted'
+        } else {
+          action = 'rejected'
+          reason = 'body'
+        }
       } else if (/^\[EPC]:\s.*/.test(title)) {
         type_label = 'type: EPIC'
       } else if (/^\[TSK]:\s.*/.test(title)) {
@@ -28564,18 +28574,12 @@ async function run() {
       } else {
         type_label = 'type: MISCELLANEOUS'
       }
-      if (type_label === 'type: BUG') {
-        if (/^### DESCRIPTION\n\n\nDS.*/s.test(body)) {
-          console.log('Body Matched')
-        } else {
-          console.log('Body Not Matched')
-        }
-      }
     } else {
       action = 'rejected'
       reason = 'title'
     }
-    console.log(body)
+    console.log(action)
+    console.log(reason)
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)
