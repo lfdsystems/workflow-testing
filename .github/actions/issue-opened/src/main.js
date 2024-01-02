@@ -89,7 +89,7 @@ async function run() {
         type_label = 'type: MISCELLANEOUS'
       }
       if (type_label === 'type: BUG') {
-        if (/^### DESCRIPTION.*/s.test(body)) {
+        if (/^### DESCRIPTION\n\n\nDS.*/s.test(body)) {
           console.log('Body Matched')
         } else {
           console.log('Body Not Matched')
