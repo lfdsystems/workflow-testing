@@ -73,7 +73,7 @@ async function run() {
     ) {
       if (/^\[BUG]:\s.*/.test(title)) {
         if (
-          /### DESCRIPTION\n{3}.*?\n{2}### EXPECTED BEHAVIOUR\n{3}.*?\n{2}### ACTUAL BEHAVIOUR\n{3}.*?\n{2}### STEPS TO REPRODUCE\n{3}.*?\n{2}### BUG SCREENSHOT\n{3}.*?\n{2}### BUG CODE OR LOGS\n{3}```VBA\n.*?```$/s.test(
+          /### DESCRIPTION\n{3}.*?\n{2}### EXPECTED BEHAVIOUR\n{3}.*?\n{2}### ACTUAL BEHAVIOUR\n{3}.*?\n{2}### STEPS TO REPRODUCE\n{3}.*?\n{2}### BUG SCREENSHOT\n{3}.*?\n{2}### BUG CODE OR LOGS\n{3}```VBA\n.*?```\n$/s.test(
             body
           )
         ) {
