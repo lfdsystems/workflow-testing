@@ -29,20 +29,6 @@ body:
     attributes:
       value: |
         ---
-  - type: input
-    id: descsep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: ---
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: ---
   - type: textarea
     id: expbeh
     attributes:
@@ -58,22 +44,6 @@ body:
     attributes:
       value: |
         ---
-  - type: input
-    id: exbhsep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: |
-        ---
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ---
   - type: textarea
     id: actbeh
     attributes:
@@ -83,22 +53,6 @@ body:
         ###### KINDLY PROVIDE THE DETAILS OF WHAT HAPPENS INSTEAD!!!!!
       placeholder: |
         DESCRIBE THE ACTUAL BEHAVIOUR.
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ---
-  - type: input
-    id: acbhsep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: |
-        ---
     validations:
       required: true
   - type: markdown
@@ -127,22 +81,6 @@ body:
     attributes:
       value: |
         ---
-  - type: input
-    id: stepsep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: |
-        ---
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ---
   - type: textarea
     id: screenshot
     attributes:
@@ -152,22 +90,6 @@ body:
         ###### KINDLY PROVIDE THE SCREENSHOT OF THE BUG!!!!!
       placeholder: |
         UPLOAD THE SCREENSHOT IMAGE.
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ---
-  - type: input
-    id: scshsep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: |
-        ---
     validations:
       required: true
   - type: markdown
@@ -186,22 +108,6 @@ body:
       render: VBA
     validations:
       required: false
-  - type: markdown
-    attributes:
-      value: |
-        ---
-  - type: input
-    id: logssep
-    attributes:
-      label: |
-        --- (TO BE REMOVED AFTER SUBMITTING THE FORM)
-      description: |
-        ###### THIS WILL BE USED AS A SEPARATOR IN THE MARKDOWN.
-        ***KINDLY IGNORE THIS AND DO NOT CHANGE THE VALUE.***
-      value: |
-        ---
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: |
